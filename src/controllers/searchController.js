@@ -1,15 +1,15 @@
 /**
- * BJTU Live: API Controller
+ * BJTU Live: Search Controller
  */
 
 const searchService = require('../services/searchService');
 
 /**
- * APIController
+ * SearchController
+ * 搜索业务入口
  * Controller 是业务入口，由 HTTP 路由解析后调用
- * 包含各项功能
  */
-class APIController {
+class SearchController {
     /**
      * 搜索课程
      * @param req Express 的请求参数
@@ -57,4 +57,4 @@ class APIController {
 }
 
 // 导出 Controller 的实例
-module.exports = new APIController();
+module.exports = new SearchController();
