@@ -5,3 +5,4 @@ node_modules/
 .inspirecloud.service.conf
 bjtu-live-server.rar
 test*.js
+src/config.js

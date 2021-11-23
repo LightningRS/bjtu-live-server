@@ -32,7 +32,7 @@ class UserController {
         const resBody = {
             error: 0
         };
-        await userService.ttLogin(req.body, resBody);
+        await userService.ttNewLogin(req.body, resBody);
         res.send(resBody);
     }
 }

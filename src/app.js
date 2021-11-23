@@ -2,15 +2,14 @@ const path = require('path');
 const apiRouter = require('./routers/apiRouter');
 const Constants = require('./constants');
 const counter = require('./utils/semWeekCounter');
+const config = require('./config');
 
 const express = require('express');
 
 const app = express();
 
 // 全局配置
-global.appConfig = {
-    maxPageSize: 10,        // 最大单页数据量
-};
+global.appConfig = config;
 
 // 为应用使用中间件
 // 静态文件中间件
@@ -39,7 +38,7 @@ app.use(errorHandler);
 
 function notFound(req, res) {
     res.status(404);
-    const [err, msg] = Constants.ERR_API_NOT_FOUND;
+    const [err, msg] = Constants.ERR_MASTER_API_NOT_FOUND;
     res.send({
         error: err,
         msg: msg,
@@ -53,7 +52,7 @@ function errorHandler(err, req, res, next) {
     console.log(err);
     res.status(err.error ? 200 : 500);
     if (!err.error) {
-        const [err, msg] = Constants.ERR_SYSTEM_ERROR;
+        const [err, msg] = Constants.ERR_MASTER_SYS_ERROR;
         err.error = err;
         err.msg = msg;
     }

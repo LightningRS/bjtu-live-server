@@ -2,7 +2,7 @@
  * BJTU Live: Slave Controller
  */
 
-const slaveService = require('../services/liveService');
+const slaveService = require('../services/slaveService');
 
 /**
  * SlaveController

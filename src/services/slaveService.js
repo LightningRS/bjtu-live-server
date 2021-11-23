@@ -1,5 +1,6 @@
 const inspirecloud = require('@byteinspire/api');
 const ObjectId = inspirecloud.db.ObjectId;
+const userService = require('./userService');
 
 /**
  * SlaveService
@@ -12,7 +13,7 @@ class SlaveService {
      * @param {Object} resObj 返回结果对象
      */
     async getUserInfo(params, resObj) {
-        return;
+        return await userService.ttLogin(params, resObj);
     }
 }
 
